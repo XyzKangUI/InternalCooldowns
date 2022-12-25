@@ -1,0 +1,9 @@
+## Interface: 30401
+## Title: InternalCooldowns
+## Version: 2.0.7
+## Notes: Adds cooldown timers to your trinket procs.
+## Author: Cheald, Xyz
+## DefaultState: Enabled
+
+InternalCooldowns.lua
+Data.lua
