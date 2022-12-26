@@ -241,7 +241,6 @@ function lib.GetInventoryItemCooldown(self)
     end
 end
 
-
 function lib.TMGetInventoryItemCooldown(maybeGlobal)
     local itemID1 = GetInventoryItemID("player", 13)
     local itemID2 = GetInventoryItemID("player", 14)
@@ -301,12 +300,17 @@ function lib.GetActionCooldown(self)
     end
 end
 
-
 function lib.BT4GetActionCooldown(self)
     local actionType, actionID, actionSubType = GetActionInfo(self._state_action)
+
+    if actionID == nil then
+        return 0, 0, 0
+    end
+
     local itemTable = {}
     local firstTexture = GetInventoryItemTexture("player", 13)
     local secondTexture = GetInventoryItemTexture("player", 14)
+
     if firstTexture then
         itemTable[firstTexture] = 13
     end
