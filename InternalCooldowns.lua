@@ -271,10 +271,16 @@ end
 
 function lib.GetActionCooldown(self)
     local actionType, actionID, actionSubType = GetActionInfo(self.action)
-    local itemTable = {
-        [GetInventoryItemTexture("player", 13)] = 13,
-        [GetInventoryItemTexture("player", 14)] = 14,
-    }
+    local itemTable = {}
+    local firstTexture = GetInventoryItemTexture("player", 13)
+    local secondTexture = GetInventoryItemTexture("player", 14)
+    if firstTexture then
+        itemTable[firstTexture] = 13
+    end
+    if secondTexture then
+        itemTable[secondTexture] = 14
+    end
+
     if actionType == "item" then
         local start, duration, running = cooldownReturn(actionID)
         if start then
@@ -295,12 +301,19 @@ function lib.GetActionCooldown(self)
     end
 end
 
+
 function lib.BT4GetActionCooldown(self)
     local actionType, actionID, actionSubType = GetActionInfo(self._state_action)
-    local itemTable = {
-        [GetInventoryItemTexture("player", 13)] = 13,
-        [GetInventoryItemTexture("player", 14)] = 14,
-    }
+    local itemTable = {}
+    local firstTexture = GetInventoryItemTexture("player", 13)
+    local secondTexture = GetInventoryItemTexture("player", 14)
+    if firstTexture then
+        itemTable[firstTexture] = 13
+    end
+    if secondTexture then
+        itemTable[secondTexture] = 14
+    end
+
     if actionType == "item" then
         local start, duration, running = cooldownReturn(actionID)
         if start then
