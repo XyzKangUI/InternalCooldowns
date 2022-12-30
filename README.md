@@ -7,7 +7,7 @@ The addon displays the internal cooldown of trinkets on:
 
 - Blizzard's actionbar
 - Dominos actionbar
-- Bartender4 actionbar
+- Bartender4 actionbar (incompatible with GreyOnCooldown addon) 
 - TrinketMenu addon
 - Character Info panel
 
